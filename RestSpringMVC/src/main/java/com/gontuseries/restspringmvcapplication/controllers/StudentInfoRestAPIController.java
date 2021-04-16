@@ -2,6 +2,7 @@ package com.gontuseries.restspringmvcapplication.controllers;
 
 import java.util.ArrayList;
 
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -54,6 +55,12 @@ public class StudentInfoRestAPIController {
 		
 		//return true if record successfully updated into the DB and false for failed update
 		
-		return new ResponseEntity<Boolean>(true,HttpStatus.OK);
+		HttpHeaders httpHeaders = new HttpHeaders();
+		
+		httpHeaders.add("key1","value1");
+		httpHeaders.add("key2","value2");
+		
+		
+		return new ResponseEntity<Boolean>(true, httpHeaders,HttpStatus.OK);
 	}
 }
