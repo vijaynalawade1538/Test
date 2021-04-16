@@ -1,5 +1,6 @@
 package com.gontuseries.springmvcapplication.controllers;
 
+import java.io.IOException;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 
@@ -31,19 +32,13 @@ public class StudentAdmissionController {
 	}
 
 	@RequestMapping(value = "/admissonForm.html", method = RequestMethod.GET)
-	public ModelAndView getAdmissionForm() {
+	public ModelAndView getAdmissionForm() throws IOException {
 
 		ModelAndView model = new ModelAndView("AdmissionForm");
 		//throw new NullPointerException();
+		//throw new IOException();
 		return model;
 	}
-	
-	@ExceptionHandler(value = NullPointerException.class)
-	public String nullPointerException(Exception e) {
-		System.out.println("Null Poiner Excepption Occured: "+e);
-		return "NullPointerException";
-	}
-
 	
 	
 	// Receive attributes from AdmissionForm.jsp
