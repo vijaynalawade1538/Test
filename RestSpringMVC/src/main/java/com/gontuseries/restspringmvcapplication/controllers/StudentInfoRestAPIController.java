@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -38,4 +39,16 @@ public class StudentInfoRestAPIController {
 		return student;
 	}
 
+	@RequestMapping(value = "/students/{name}", method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
+	public boolean updateStudent(@PathVariable("name") String name, @RequestBody Student student){
+		System.out.println("Student Name: "+name);
+		System.out.println("Student Name: "+student.getStudentName()+" Student Hobby: "+student.getStudentHobby());
+		
+		//find the matching student record using "studentName" from the DB
+		//Update the matching student record with the information of student sent by the client
+		
+		//return true if record successfully updated into the DB and false for failed update
+		
+		return true;
+	}
 }
