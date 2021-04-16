@@ -64,11 +64,11 @@ public class StudentInfoRestAPIController {
 		return new ResponseEntity<Boolean>(true, httpHeaders,HttpStatus.OK);
 	}
 	
-	@RequestMapping(value = "/students", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Boolean> addStudent(@RequestBody Student student){
+	@RequestMapping(value = "/students/{name}", method = RequestMethod.DELETE, consumes = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Boolean> addStudent(@PathVariable("name") String name){
 		
-		System.out.println("Student Name: "+student.getStudentName()+" Student Hobby: "+student.getStudentHobby());
+		System.out.println("Student Name:"+name);
 		//Insert the student record into DB
-		return new ResponseEntity<Boolean>(true, HttpStatus.CREATED);
+		return new ResponseEntity<Boolean>(true, HttpStatus.OK);
 	}
 }
