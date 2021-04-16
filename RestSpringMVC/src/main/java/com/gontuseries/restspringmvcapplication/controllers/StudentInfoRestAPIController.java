@@ -63,4 +63,12 @@ public class StudentInfoRestAPIController {
 		
 		return new ResponseEntity<Boolean>(true, httpHeaders,HttpStatus.OK);
 	}
+	
+	@RequestMapping(value = "/students", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Boolean> addStudent(@RequestBody Student student){
+		
+		System.out.println("Student Name: "+student.getStudentName()+" Student Hobby: "+student.getStudentHobby());
+		//Insert the student record into DB
+		return new ResponseEntity<Boolean>(true, HttpStatus.CREATED);
+	}
 }
