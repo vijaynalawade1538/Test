@@ -2,7 +2,9 @@ package com.gontuseries.restspringmvcapplication.controllers;
 
 import java.util.ArrayList;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -39,8 +41,11 @@ public class StudentInfoRestAPIController {
 		return student;
 	}
 
+	// ResponseEntity is used for sending status code to the client
+	
 	@RequestMapping(value = "/students/{name}", method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
-	public boolean updateStudent(@PathVariable("name") String name, @RequestBody Student student){
+	public ResponseEntity<Boolean> updateStudent(@PathVariable("name") String name, @RequestBody Student student){
+		
 		System.out.println("Student Name: "+name);
 		System.out.println("Student Name: "+student.getStudentName()+" Student Hobby: "+student.getStudentHobby());
 		
@@ -49,6 +54,6 @@ public class StudentInfoRestAPIController {
 		
 		//return true if record successfully updated into the DB and false for failed update
 		
-		return true;
+		return new ResponseEntity<Boolean>(true,HttpStatus.OK);
 	}
 }
