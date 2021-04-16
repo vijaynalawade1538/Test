@@ -2,6 +2,7 @@ package com.gontuseries.restspringmvcapplication.controllers;
 
 import java.util.ArrayList;
 
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -12,7 +13,7 @@ import com.gontuseries.restspringmvcapplication.model.Student;
 @RestController
 public class StudentInfoRestAPIController {
 	
-	@RequestMapping(value = "/students", method = RequestMethod.GET)
+	@RequestMapping(value = "/students", method = RequestMethod.GET, produces = MediaType.APPLICATION_XML_VALUE)
 	public ArrayList<Student> getStudentList(){
 		ArrayList<Student> studentList = new ArrayList<Student>();
 		Student student1 = new Student();
