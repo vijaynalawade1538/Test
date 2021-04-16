@@ -3,7 +3,6 @@ package com.gontuseries.restspringmvcapplication.controllers;
 import java.io.IOException;
 import java.sql.Date;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
@@ -12,10 +11,8 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.gontuseries.restspringmvcapplication.config.StudentNameEditor;
@@ -65,31 +62,5 @@ public class StudentAdmissionController {
 		return model;
 	}
 	
-	@ResponseBody
-	@RequestMapping(value = "/students", method = RequestMethod.GET)
-	public ArrayList<Student> getStudentList(){
-		ArrayList<Student> studentList = new ArrayList<Student>();
-		Student student1 = new Student();
-		student1.setStudentName("Vijay");
-		Student student2 = new Student();
-		student2.setStudentName("Sangram");
-		Student student3 = new Student();
-		student3.setStudentName("Harshal");
-		
-		studentList.add(student1);
-		studentList.add(student2);
-		studentList.add(student3);
-		
-		return studentList;
-	}
-	
-	@ResponseBody
-	@RequestMapping("/students/{name}")
-	public Student getStudent(@PathVariable("name") String name) {
-		Student student = new Student();
-		student.setStudentName(name);
-		student.setStudentHobby("WWE");
-		return student;
-	}
 	
 }
