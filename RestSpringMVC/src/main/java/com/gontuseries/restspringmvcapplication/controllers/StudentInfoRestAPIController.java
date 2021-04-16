@@ -16,15 +16,17 @@ import com.gontuseries.restspringmvcapplication.model.Student;
 
 @RestController
 public class StudentInfoRestAPIController {
+
 	
 	@RequestMapping(value = "/students", method = RequestMethod.GET, produces = MediaType.APPLICATION_XML_VALUE)
 	public ArrayList<Student> getStudentList(){
 		ArrayList<Student> studentList = new ArrayList<Student>();
 		Student student1 = new Student();
-		student1.setStudentName("Vijay");
 		Student student2 = new Student();
-		student2.setStudentName("Sangram");
 		Student student3 = new Student();
+		
+		student1.setStudentName("Vijay");
+		student2.setStudentName("Sangram");
 		student3.setStudentName("Harshal");
 		
 		studentList.add(student1);
@@ -65,10 +67,18 @@ public class StudentInfoRestAPIController {
 	}
 	
 	@RequestMapping(value = "/students/{name}", method = RequestMethod.DELETE, consumes = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Boolean> deleteStudent(@PathVariable("name") String name){
+		
+		System.out.println("Student Name:"+name);
+		//Delete student record from DB
+		return new ResponseEntity<Boolean>(true, HttpStatus.OK);
+	}
+	
+	@RequestMapping(value = "/students/{name}", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Boolean> addStudent(@PathVariable("name") String name){
 		
 		System.out.println("Student Name:"+name);
 		//Insert the student record into DB
-		return new ResponseEntity<Boolean>(true, HttpStatus.OK);
+		return new ResponseEntity<Boolean>(true, HttpStatus.CREATED);
 	}
 }
