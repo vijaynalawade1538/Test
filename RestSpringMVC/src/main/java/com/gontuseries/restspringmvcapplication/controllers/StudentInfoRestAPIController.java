@@ -2,6 +2,7 @@ package com.gontuseries.restspringmvcapplication.controllers;
 
 import java.util.ArrayList;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -17,13 +18,18 @@ import com.gontuseries.restspringmvcapplication.model.Student;
 @RestController
 public class StudentInfoRestAPIController {
 
+	@Autowired
+	Student student;
+	@Autowired
+	Student student1;
+	@Autowired
+	Student student2;
+	@Autowired
+	Student student3;
 	
 	@RequestMapping(value = "/students", method = RequestMethod.GET, produces = MediaType.APPLICATION_XML_VALUE)
 	public ArrayList<Student> getStudentList(){
 		ArrayList<Student> studentList = new ArrayList<Student>();
-		Student student1 = new Student();
-		Student student2 = new Student();
-		Student student3 = new Student();
 		
 		student1.setStudentName("Vijay");
 		student2.setStudentName("Sangram");
@@ -38,7 +44,6 @@ public class StudentInfoRestAPIController {
 	
 	@RequestMapping("/students/{name}")
 	public Student getStudent(@PathVariable("name") String name) {
-		Student student = new Student();
 		student.setStudentName(name);
 		student.setStudentHobby("WWE");
 		return student;

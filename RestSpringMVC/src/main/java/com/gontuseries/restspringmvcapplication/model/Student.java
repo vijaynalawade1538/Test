@@ -3,9 +3,8 @@ package com.gontuseries.restspringmvcapplication.model;
 import java.util.ArrayList;
 import java.util.Date;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonIncludeProperties;
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
@@ -20,6 +19,8 @@ public class Student {
 	private long studentMobile;
 	private Date studentDOB;
 	private ArrayList<String> studentSkills;
+	
+	@Autowired
 	private Address studentAddress;
 	
 	
@@ -51,6 +52,7 @@ public class Student {
 		return studentName;
 	}
 	public void setStudentName(String name) {
+		System.out.println("New student object created..");
 		this.studentName = name;
 	}
 	public String getStudentHobby() {
