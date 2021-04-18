@@ -12,9 +12,9 @@
 
 	<context:component-scan
 		base-package="com.gontuseries.restspringmvcapplication.controllers" />
-	
-	<mvc:annotation-driven/>
-	
+
+	<mvc:annotation-driven />
+
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix">
@@ -26,9 +26,9 @@
 		</property>
 
 	</bean>
-	
 	<!-- To add properties file in the context -->
-	<bean id="messageSource" class= "org.springframework.context.support.ReloadableResourceBundleMessageSource">
+	<bean id="messageSource"
+		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
 		<property name="basename" value="/WEB-INF/studentmessages">
 		</property>
 	</bean>
