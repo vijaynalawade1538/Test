@@ -3,6 +3,7 @@ package com.gontuseries.restspringmvcapplication.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
@@ -40,6 +41,11 @@ public class ProjectConfig extends WebMvcConfigurationSupport{
 	@Bean
 	public Address getAddressBean() {
 		return new Address();
+	}
+	
+	@Bean
+	public RestTemplate restTemplate() {
+		return new RestTemplate();
 	}
 	
 }
