@@ -1,7 +1,10 @@
-com\gontuseries\controllers\Address.class
+com\gontuseries\springmvcapplication\controllers\StudentAdmissionController.class
+com\gontuseries\springmvcapplication\model\Address.class
 net\javaguides\springmvc\helloworld\controller\HelloWorldController.class
+com\gontuseries\springmvcapplication\config\WebServletConfiguration.class
+com\gontuseries\springmvcapplication\model\Student.class
 net\javaguides\springmvc\helloworld\config\AppConfig.class
-com\gontuseries\controllers\Student.class
-com\gontuseries\controllers\StudentNameEditor.class
-com\gontuseries\controllers\StudentAdmissionController.class
+com\gontuseries\springmvcapplication\controllers\GlobalExceptionHandlerController.class
+com\gontuseries\springmvcapplication\config\ProjectConfig.class
+com\gontuseries\springmvcapplication\config\StudentNameEditor.class
 net\javaguides\springmvc\helloworld\model\HelloWorld.class

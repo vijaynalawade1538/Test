@@ -1,8 +1,9 @@
 package com.gontuseries.restspringmvcapplication.config;
 
+import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
-
+@Configuration
 public class WebServletConfiguration extends AbstractAnnotationConfigDispatcherServletInitializer{
 
 	@Override
@@ -21,6 +22,7 @@ public class WebServletConfiguration extends AbstractAnnotationConfigDispatcherS
 	
 	@Override
 	protected String[] getServletMappings() {
+		System.out.println("Hello");
 		
 		return new String[] {"/"};
 	}

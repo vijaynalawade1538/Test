@@ -30,7 +30,7 @@ public class StudentAdmissionController {
 		
 	}
 
-	@RequestMapping(value = "/admissonForm.html", method = RequestMethod.GET)
+	@RequestMapping(value = "/admissionForm.html", method = RequestMethod.GET)
 	public ModelAndView getAdmissionForm() throws IOException {
 
 		ModelAndView model = new ModelAndView("AdmissionForm");

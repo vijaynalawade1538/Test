@@ -1,0 +1,10 @@
+com\gontuseries\restspringmvcapplication\config\WebServletConfiguration.class
+com\gontuseries\restspringmvcapplication\model\Student.class
+com\gontuseries\restspringmvcapplication\config\StudentNameEditor.class
+com\gontuseries\restspringmvcapplication\controllers\StudentInfoRestAPIController.class
+com\gontuseries\restspringmvcapplication\model\Address.class
+com\gontuseries\restspringmvcapplication\controllers\GlobalExceptionHandlerController.class
+com\gontuseries\restspringmvcapplication\config\ProjectConfig.class
+com\gontuseries\restspringmvcapplication\controllers\ConsumeRestWebService.class
+com\gontuseries\restspringmvcapplication\controllers\StudentAdmissionController.class
+com\gontuseries\xmlparse\XMLParser.class
